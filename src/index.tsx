@@ -106,7 +106,11 @@ app.get("/", async (c) => {
         </h1>
         <p class="mb-5">I do software and stuff</p>
         <div class="flex flex-row gap-6 items-center justify-center">
-          <a href="mailto:jimmyverburgt@gmail.com" target="_blank">
+          <a
+            href="mailto:jimmyverburgt@gmail.com"
+            target="_blank"
+            aria-label="Email me"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -123,7 +127,11 @@ app.get("/", async (c) => {
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </a>
-          <a href="https://github.com/VerburgtJimmy" target="_blank">
+          <a
+            href="https://github.com/VerburgtJimmy"
+            target="_blank"
+            aria-label="My github"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -142,6 +150,7 @@ app.get("/", async (c) => {
           <a
             href="https://www.linkedin.com/in/jimmy-verburgt-4774401a7/"
             target="_blank"
+            aria-label="My linkedin"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
