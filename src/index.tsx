@@ -308,4 +308,10 @@ app.get("/blog/:slug", async (c) => {
   );
 });
 
+Bun.serve({
+  fetch: app.fetch,
+  port: 3210,
+  hostname: "0.0.0.0", // <— THIS IS CRUCIAL inside Docker
+});
+
 export default app;
