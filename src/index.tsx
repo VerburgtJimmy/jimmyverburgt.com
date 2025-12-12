@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { tailwind } from "hono-tailwind";
 import { serveStatic } from "hono/bun";
+import { tailwind } from "hono-tailwind";
 import { getAllPosts, getPost } from "./lib/posts";
 
 const app = new Hono();
