@@ -1,12 +1,13 @@
 {
   "lockfileVersion": 1,
+  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "jimmyverburgt.new",
       "dependencies": {
         "bun-plugin-tailwind": "^0.1.2",
         "gray-matter": "^4.0.3",
-        "hono": "^4.10.3",
+        "hono": "^4.10.8",
         "hono-tailwind": "^2.2.0",
         "marked": "^16.4.1",
       },
@@ -109,7 +110,7 @@
 
     "gray-matter": ["gray-matter@4.0.3", "", { "dependencies": { "js-yaml": "^3.13.1", "kind-of": "^6.0.2", "section-matter": "^1.0.0", "strip-bom-string": "^1.0.0" } }, "sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q=="],
 
-    "hono": ["hono@4.10.3", "", {}, "sha512-2LOYWUbnhdxdL8MNbNg9XZig6k+cZXm5IjHn2Aviv7honhBMOHb+jxrKIeJRZJRmn+htUCKhaicxwXuUDlchRA=="],
+    "hono": ["hono@4.10.8", "", {}, "sha512-DDT0A0r6wzhe8zCGoYOmMeuGu3dyTAE40HHjwUsWFTEy5WxK1x2WDSsBPlEXgPbRIFY6miDualuUDbasPogIww=="],
 
     "hono-tailwind": ["hono-tailwind@2.2.0", "", { "dependencies": { "@tailwindcss/postcss": "^4.1.6", "postcss": "^8.5.3" }, "peerDependencies": { "hono": "^4.0.0", "tailwindcss": "^4.1.6" } }, "sha512-orA97f08l2nsKU4tu4EAa4/F5KIIscdvsFQkFi07U0WYCpCVEy+Pw4qAY+z4jYgHf7OSnXo7IzLwFxTq4tRH9Q=="],
 
