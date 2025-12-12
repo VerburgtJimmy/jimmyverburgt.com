@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { serveStatic } from "hono/bun";
 import { tailwind } from "hono-tailwind";
+import { serveStatic } from "hono/bun";
 import { getAllPosts, getPost } from "./lib/posts";
 
 const app = new Hono();
@@ -81,7 +81,7 @@ app.use("*", async (c, next) => {
             {content}
           </div>
         </body>
-      </html>,
+      </html>
     );
   });
   await next();
@@ -174,7 +174,7 @@ app.get("/", async (c) => {
           </a>
         </div>
       </div>
-    </>,
+    </>
   );
 });
 
@@ -202,7 +202,7 @@ app.get("/blog", async (c) => {
           </a>
         ))}
       </div>
-    </>,
+    </>
   );
 });
 
@@ -320,14 +320,14 @@ app.get("/blog/:slug", async (c) => {
           </p>
         </div>
       </div>
-    </>,
+    </>
   );
 });
 
 Bun.serve({
   fetch: app.fetch,
   port: 3210,
-  hostname: "0.0.0.0", // <— THIS IS CRUCIAL inside Docker
+  hostname: "0.0.0.0",
 });
 
 export default app;
