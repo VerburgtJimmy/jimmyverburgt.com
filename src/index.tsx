@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { serveStatic } from "hono/bun";
 import { tailwind } from "hono-tailwind";
+import { serveStatic } from "hono/bun";
 import { getAllPosts, getPost } from "./lib/posts";
 
 const app = new Hono();
@@ -13,33 +13,35 @@ app.use("/tailwind.css", tailwind());
 app.use("*", async (c, next) => {
   c.setRenderer((content) => {
     return c.html(
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
-          <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta name="author" content="Jimmy Verburgt" />
-          <link rel="canonical" href="https://jimmyverburgt.com/"></link>
-          <meta name="description" content="Hi, i'm Jimmy" />
-          <meta
-            name="keywords"
-            content="jimmy, verburgt, jimmy verburgt, software, development"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/public/favicon.png"
-          ></link>
+      "<!DOCTYPE html>" +
+      (
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+            <meta name="author" content="Jimmy Verburgt" />
+            <link rel="canonical" href="https://jimmyverburgt.com/"></link>
+            <meta name="description" content="Hi, i'm Jimmy" />
+            <meta
+              name="keywords"
+              content="jimmy, verburgt, jimmy verburgt, software, development"
+            />
+            <link
+              rel="icon"
+              type="image/png"
+              sizes="32x32"
+              href="/public/favicon.png"
+            ></link>
 
-          <link rel="stylesheet" href="/public/app.css" />
-          <link rel="stylesheet" href="/tailwind.css" />
-          <link rel="preload" href="/tailwind.css" as="style" />
-          <style>
-            {`
+            <link rel="stylesheet" href="/public/app.css" />
+            <link rel="stylesheet" href="/tailwind.css" />
+            <link rel="preload" href="/tailwind.css" as="style" />
+            <style>
+              {`
               .back-button {
                 opacity: 0;
                 transform: translateX(-10px);
@@ -50,38 +52,41 @@ app.use("*", async (c, next) => {
                 transform: translateX(0);
               }
             `}
-          </style>
-          <script>let FF_FOUC_FIX;</script>
-        </head>
-        <body class="w-full flex flex-col min-h-screen font-mono text-[#222]">
-          <div class="flex flex-1 flex-col justify-center">
-            <nav class="w-full px-[5%] md:px-[15%] lg:px-[20%] py-5 flex flex-row justify-between">
-              <a
-                href="/"
-                class="font-bold text-md hover:underline hover:cursor-pointer"
-              >
-                Jimmy Verburgt
-              </a>
-              <div class="flex gap-5">
-                <a
-                  href="/blog"
-                  class="opacity-60 hover:underline hover:cursor-pointer"
-                >
-                  Blog
-                </a>
-                <a
-                  href="mailto:jimmyverburgt@gmail.com"
-                  class="opacity-60 hover:underline hover:cursor-pointer hidden sm:inline-block"
-                >
-                  jimmyverburgt@gmail.com
-                </a>
-              </div>
-            </nav>
+            </style>
+            <script>let FF_FOUC_FIX;</script>
+          </head>
+          <body class="w-full flex flex-col min-h-screen font-mono text-[#222]">
+            <div class="flex flex-1 flex-col justify-center">
+              <header class="w-full">
+                <nav class="w-full px-[5%] md:px-[15%] lg:px-[20%] py-5 flex flex-row justify-between">
+                  <a
+                    href="/"
+                    class="font-bold text-md hover:underline hover:cursor-pointer"
+                  >
+                    Jimmy Verburgt
+                  </a>
+                  <div class="flex gap-5">
+                    <a
+                      href="/blog"
+                      class="opacity-60 hover:underline hover:cursor-pointer"
+                    >
+                      Blog
+                    </a>
+                    <a
+                      href="mailto:jimmyverburgt@gmail.com"
+                      class="opacity-60 hover:underline hover:cursor-pointer hidden sm:inline-block"
+                    >
+                      jimmyverburgt@gmail.com
+                    </a>
+                  </div>
+                </nav>
+              </header>
 
-            {content}
-          </div>
-        </body>
-      </html>
+              {content}
+            </div>
+          </body>
+        </html>
+      )
     );
   });
   await next();
@@ -97,7 +102,7 @@ app.get("/", async (c) => {
         content="hi there, i'm Jimmy. Welcome to my personal website and blog"
       />
 
-      <div class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center items-center flex-[1_auto]">
+      <main class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center items-center flex-[1_auto]">
         <h1 class="bg-red-600 mb-5 text-white rounded-xs inline-block mx-auto p-1 text-3xl font-bold">
           hi there, i'm Jimmy
         </h1>
@@ -173,7 +178,7 @@ app.get("/", async (c) => {
             </svg>
           </a>
         </div>
-      </div>
+      </main>
     </>
   );
 });
@@ -187,7 +192,7 @@ app.get("/blog", async (c) => {
         name="description"
         content="Welcome to the software development blog of Jimmy"
       />
-      <div class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center flex-[1_auto]">
+      <main class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center flex-[1_auto]">
         <h1 class="text-5xl font-bold mb-10">Blog</h1>
         {posts.map((p) => (
           <a
@@ -201,7 +206,7 @@ app.get("/blog", async (c) => {
             <p>{p.date}</p>
           </a>
         ))}
-      </div>
+      </main>
     </>
   );
 });
@@ -221,7 +226,7 @@ app.get("/blog/:slug", async (c) => {
       <title>{post.title} | Jimmy Verburgt blog</title>
       <meta name="description" content={`${post.description}`} />
       <meta name="keywords" content={post.tags.join(", ")} />
-      <div class="w-full px-[5%] md:px-[15%] lg:px-[20%]  mb-10 flex flex-col flex-[1_auto]">
+      <main class="w-full px-[5%] md:px-[15%] lg:px-[20%]  mb-10 flex flex-col flex-[1_auto]">
         <a
           href="/blog"
           class="text-sm bg-[#dcdcdc]/60 inline-flex w-fit flex-row justify-center items-center rounded-4xl p-1"
@@ -319,7 +324,7 @@ app.get("/blog/:slug", async (c) => {
             {formattedDate}
           </p>
         </div>
-      </div>
+      </main>
     </>
   );
 });
