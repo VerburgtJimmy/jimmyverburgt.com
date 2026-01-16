@@ -6,7 +6,7 @@
   "dependencies": {
     "bun-plugin-tailwind": "^0.1.2",
     "gray-matter": "^4.0.3",
-    "hono": "^4.10.8",
+    "hono": "^4.11.4",
     "hono-tailwind": "^2.2.0",
     "marked": "^17.0.1"
   },
