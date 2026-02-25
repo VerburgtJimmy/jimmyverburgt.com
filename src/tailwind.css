@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
 @theme {
-  --font-mono: "Geist Mono";
+  --font-mono: "Geist Mono", monospace, ui-monospace;
 }
