@@ -51,7 +51,10 @@ app.use("*", async (c, next) => {
             <div class="flex flex-1 flex-col justify-center">
               <header class="w-full">
                 <nav class="w-full px-[5%] md:px-[15%] lg:px-[20%] py-5 flex flex-row justify-between">
-                  <a href="/" class="font-bold text-md hover:underline hover:cursor-pointer">
+                  <a
+                    href="/"
+                    class="font-bold text-md hover:underline hover:cursor-pointer font-pixel"
+                  >
                     Jimmy Verburgt
                   </a>
                   <div class="flex gap-5">
@@ -89,7 +92,7 @@ app.get("/", async (c) => {
       />
 
       <main class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center items-center flex-[1_auto]">
-        <h1 class="bg-red-600 mb-5 text-white rounded-xs inline-block mx-auto p-1 text-3xl font-bold">
+        <h1 class="bg-red-600 mb-5 text-white rounded-xs inline-block mx-auto p-1 text-3xl font-bold font-pixel">
           hi there, i'm Jimmy
         </h1>
         <p class="mb-5">I do software and stuff</p>
@@ -176,7 +179,7 @@ app.get("/blog", async (c) => {
       <title>Blog - Jimmy Verburgt</title>
       <meta name="description" content="Welcome to the software development blog of Jimmy" />
       <main class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center flex-[1_auto]">
-        <h1 class="text-5xl font-bold mb-10">Blog</h1>
+        <h1 class="text-5xl font-bold mb-10 font-pixel">Blog</h1>
         {posts.map((p) => (
           <a
             href={`/blog/${p.slug}`}
@@ -186,7 +189,7 @@ app.get("/blog", async (c) => {
               <h2 class="text-2xl">{p.title}</h2>
               <p class="opacity-60">{p.description}</p>
             </div>
-            <p>{p.date}</p>
+            <p class="font-pixel">{p.date}</p>
           </a>
         ))}
       </main>
@@ -235,7 +238,7 @@ app.get("/blog/:slug", async (c) => {
         </a>
 
         <div class="opacity-60 text-xs mt-8 leading-[normal]">
-          <p class="my-2">
+          <p class="my-2 font-pixel">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -256,12 +259,12 @@ app.get("/blog/:slug", async (c) => {
           </p>
         </div>
         <article>
-          <h2 class="text-5xl mb-5! mt-0! font-bold">{post.title}</h2>
+          <h2 class="text-5xl mb-5! mt-0! font-bold font-pixel">{post.title}</h2>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
         <hr class="opacity-20 border-none h-px w-full bg-[#222]" />
         <div class="opacity-60 mb-2 text-xs mt-8">
-          <p class="my-2">
+          <p class="my-2 font-pixel">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -283,7 +286,7 @@ app.get("/blog/:slug", async (c) => {
             </svg>
             {post.wordCount} words
           </p>
-          <p class="my-2">
+          <p class="my-2 font-pixel">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
