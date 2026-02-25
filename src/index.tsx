@@ -8,7 +8,10 @@ const app = new Hono();
 app.use("/public/*", serveStatic({ root: "./" }));
 
 // --- Global renderer ---
-app.use("/tailwind.css", tailwind());
+app.use(
+  "/tailwind.css",
+  tailwind({ in: "./src/tailwind.css", out: "../dist/tailwind.css", minify: true }),
+);
 
 app.use("*", async (c, next) => {
   c.setRenderer((content) => {
