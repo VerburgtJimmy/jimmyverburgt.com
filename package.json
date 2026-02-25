@@ -6,8 +6,8 @@
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "css": "tailwindcss -i src/tailwind.css -o public/tailwind.css --watch",
-    "build:css": "tailwindcss -i src/tailwind.css -o public/tailwind.css --minify"
+    "css": "bunx tailwindcss -i src/tailwind.css -o public/tailwind.css --watch",
+    "build:css": "bunx tailwindcss -i src/tailwind.css -o public/tailwind.css --minify"
   },
   "dependencies": {
     "bun-plugin-tailwind": "^0.1.2",
