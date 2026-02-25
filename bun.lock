@@ -8,7 +8,7 @@
         "bun-plugin-tailwind": "^0.1.2",
         "gray-matter": "^4.0.3",
         "hono": "^4.12.2",
-        "hono-tailwind": "^2.2.0",
+        "hono-tailwind": "^3.0.1",
         "marked": "^17.0.3",
       },
       "devDependencies": {
@@ -186,7 +186,7 @@
 
     "hono": ["hono@4.12.2", "", {}, "sha512-gJnaDHXKDayjt8ue0n8Gs0A007yKXj4Xzb8+cNjZeYsSzzwKc0Lr+OZgYwVfB0pHfUs17EPoLvrOsEaJ9mj+Tg=="],
 
-    "hono-tailwind": ["hono-tailwind@2.2.0", "", { "dependencies": { "@tailwindcss/postcss": "^4.1.6", "postcss": "^8.5.3" }, "peerDependencies": { "hono": "^4.0.0", "tailwindcss": "^4.1.6" } }, "sha512-orA97f08l2nsKU4tu4EAa4/F5KIIscdvsFQkFi07U0WYCpCVEy+Pw4qAY+z4jYgHf7OSnXo7IzLwFxTq4tRH9Q=="],
+    "hono-tailwind": ["hono-tailwind@3.0.1", "", { "dependencies": { "@tailwindcss/postcss": "^4.1.6", "postcss": "^8.5.3" }, "peerDependencies": { "hono": "^4.0.0", "tailwindcss": "^4.1.6" } }, "sha512-HNgee5trCVPMqAydMaT5aEq5Z0OknoQj4OsUy4GxNMCwBVtPXvl5mgxyW/U2PWHtJt++yAMeWyLZHxeAs3j2DA=="],
 
     "is-extendable": ["is-extendable@0.1.1", "", {}, "sha512-5BMULNob1vgFX6EjQw5izWDxrecWK9AM72rugNr0TFldMOi0fj6Jk+zeKIt0xGj4cEfQIJth4w3OKWOJ4f+AFw=="],
 
