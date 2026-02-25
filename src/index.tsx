@@ -19,10 +19,7 @@ app.use("*", async (c, next) => {
           <head>
             <meta charset="UTF-8" />
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1, shrink-to-fit=no"
-            />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
             <meta name="author" content="Jimmy Verburgt" />
             <link rel="canonical" href="https://jimmyverburgt.com/"></link>
             <meta name="description" content="Hi, i'm Jimmy" />
@@ -30,12 +27,7 @@ app.use("*", async (c, next) => {
               name="keywords"
               content="jimmy, verburgt, jimmy verburgt, software, development"
             />
-            <link
-              rel="icon"
-              type="image/png"
-              sizes="32x32"
-              href="/public/favicon.png"
-            ></link>
+            <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon.png"></link>
 
             <link rel="stylesheet" href="/public/app.css" />
             <link rel="stylesheet" href="/tailwind.css" />
@@ -59,17 +51,11 @@ app.use("*", async (c, next) => {
             <div class="flex flex-1 flex-col justify-center">
               <header class="w-full">
                 <nav class="w-full px-[5%] md:px-[15%] lg:px-[20%] py-5 flex flex-row justify-between">
-                  <a
-                    href="/"
-                    class="font-bold text-md hover:underline hover:cursor-pointer"
-                  >
+                  <a href="/" class="font-bold text-md hover:underline hover:cursor-pointer">
                     Jimmy Verburgt
                   </a>
                   <div class="flex gap-5">
-                    <a
-                      href="/blog"
-                      class="opacity-60 hover:underline hover:cursor-pointer"
-                    >
+                    <a href="/blog" class="opacity-60 hover:underline hover:cursor-pointer">
                       Blog
                     </a>
                     <a
@@ -86,7 +72,7 @@ app.use("*", async (c, next) => {
             </div>
           </body>
         </html>
-      )
+      ),
     );
   });
   await next();
@@ -179,7 +165,7 @@ app.get("/", async (c) => {
           </a>
         </div>
       </main>
-    </>
+    </>,
   );
 });
 
@@ -188,10 +174,7 @@ app.get("/blog", async (c) => {
   return c.render(
     <>
       <title>Blog - Jimmy Verburgt</title>
-      <meta
-        name="description"
-        content="Welcome to the software development blog of Jimmy"
-      />
+      <meta name="description" content="Welcome to the software development blog of Jimmy" />
       <main class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col justify-center flex-[1_auto]">
         <h1 class="text-5xl font-bold mb-10">Blog</h1>
         {posts.map((p) => (
@@ -207,7 +190,7 @@ app.get("/blog", async (c) => {
           </a>
         ))}
       </main>
-    </>
+    </>,
   );
 });
 
@@ -269,9 +252,7 @@ app.get("/blog/:slug", async (c) => {
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            {post.numberOfMinutes === 1
-              ? "one minute"
-              : `${post.numberOfMinutes}·minutes`}
+            {post.numberOfMinutes === 1 ? "one minute" : `${post.numberOfMinutes}·minutes`}
           </p>
         </div>
         <article>
@@ -325,7 +306,7 @@ app.get("/blog/:slug", async (c) => {
           </p>
         </div>
       </main>
-    </>
+    </>,
   );
 });
 

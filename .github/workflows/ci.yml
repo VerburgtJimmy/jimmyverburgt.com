@@ -23,13 +23,8 @@ jobs:
       - name: Type check
         run: bunx tsc --noEmit
 
-      - name: Setup Biome
+      - name: Run linter
+        run: bun run lint
 
-        uses: biomejs/setup-biome@v2
-
-        with:
-          version: latest
-
-      - name: Run Biome
-
-        run: biome ci .
+      - name: Run formatter check
+        run: bun run fmt:check

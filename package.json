@@ -1,7 +1,11 @@
 {
   "name": "jimmyverburgt.new",
   "scripts": {
-    "dev": "bun run --hot src/index.tsx"
+    "dev": "bun run --hot src/index.tsx",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "bun-plugin-tailwind": "^0.1.2",
@@ -11,8 +15,9 @@
     "marked": "^17.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.8",
     "@types/bun": "latest",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
     "tailwindcss": "^4.1.18"
   }
 }
