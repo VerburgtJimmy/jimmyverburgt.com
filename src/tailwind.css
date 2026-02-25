@@ -3,3 +3,22 @@
 @theme {
   --font-mono: "Geist Mono", monospace, ui-monospace;
 }
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/public/fonts/GeistMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("/public/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-pixel {
+  font-family: "Geist Pixel", "Geist Mono", monospace;
+}

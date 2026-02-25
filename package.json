@@ -5,13 +5,14 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt:check": "oxfmt --check",
+    "css": "tailwindcss -i src/tailwind.css -o public/tailwind.css --watch",
+    "build:css": "tailwindcss -i src/tailwind.css -o public/tailwind.css --minify"
   },
   "dependencies": {
     "bun-plugin-tailwind": "^0.1.2",
     "gray-matter": "^4.0.3",
     "hono": "^4.12.2",
-    "hono-tailwind": "^3.0.1",
     "marked": "^17.0.3"
   },
   "devDependencies": {

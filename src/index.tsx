@@ -1,17 +1,10 @@
 import { Hono } from "hono";
-import { tailwind } from "hono-tailwind";
 import { serveStatic } from "hono/bun";
 import { getAllPosts, getPost } from "./lib/posts";
 
 const app = new Hono();
 
 app.use("/public/*", serveStatic({ root: "./" }));
-
-// --- Global renderer ---
-app.use(
-  "/tailwind.css",
-  tailwind({ in: "src/tailwind.css", out: "dist/tailwind.css", minify: true }),
-);
 
 app.use("*", async (c, next) => {
   c.setRenderer((content) => {
@@ -32,9 +25,10 @@ app.use("*", async (c, next) => {
             />
             <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon.png"></link>
 
+            <link rel="stylesheet" href="/public/tailwind.css" />
+            <link rel="preload" href="/public/tailwind.css" as="style" />
             <link rel="stylesheet" href="/public/app.css" />
-            <link rel="stylesheet" href="/tailwind.css" />
-            <link rel="preload" href="/tailwind.css" as="style" />
+
             <style>
               {`
               .back-button {
