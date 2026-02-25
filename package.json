@@ -6,10 +6,11 @@
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "css": "bunx tailwindcss -i src/tailwind.css -o public/tailwind.css --watch",
-    "build:css": "bunx tailwindcss -i src/tailwind.css -o public/tailwind.css --minify"
+    "build:css": "bunx @tailwindcss/cli -i src/tailwind.css -o public/tailwind.css --minify",
+    "css": "bunx @tailwindcss/cli -i src/tailwind.css -o public/tailwind.css --watch"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.2.1",
     "bun-plugin-tailwind": "^0.1.2",
     "gray-matter": "^4.0.3",
     "hono": "^4.12.2",
