@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const plainText = post.body
+  .replace(/[#_*`>\-[\]()!]/g, "")
+  .replace(/\s+/g, " ")
+  .trim();
+const wordCount = plainText ? plainText.split(" ").length : 0;
+
+const formattedDate = post.data.date.toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<BlogPost
+  title={post.data.title}
+  description={post.data.description}
+  keywords={post.data.tags}
+  formattedDate={formattedDate}
+  wordCount={wordCount}
+  numberOfMinutes={post.data.minutes}
+>
+  <Content />
+</BlogPost>

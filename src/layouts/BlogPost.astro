@@ -1,0 +1,125 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  keywords: string[];
+  formattedDate: string;
+  wordCount: number;
+  numberOfMinutes: number;
+}
+
+const { title, description, keywords, formattedDate, wordCount, numberOfMinutes } =
+  Astro.props;
+---
+
+<Layout
+  title={`${title} | Jimmy Verburgt blog`}
+  description={description}
+  keywords={keywords.join(", ")}
+>
+  <main
+    class="w-full px-[5%] md:px-[15%] lg:px-[20%] mb-10 flex flex-col flex-[1_auto]"
+  >
+    <a
+      href="/blog"
+      class="text-sm bg-[#dcdcdc]/60 inline-flex w-fit flex-row justify-center items-center rounded-4xl p-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="feather feather-arrow-left-circle inline-block h-4 w-4 align-[-.125rem] mr-2"
+      >
+        <title>Back</title>
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 8 8 12 12 16"></polyline>
+        <line x1="16" y1="12" x2="8" y2="12"></line>
+      </svg>
+      Back
+    </a>
+
+    <div class="opacity-60 text-xs mt-8 leading-[normal]">
+      <p class="my-2 font-pixel">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-clock inline-block h-3 w-3 align-[-.125rem] mr-2"
+        >
+          <title>Reading time</title>
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        {numberOfMinutes === 1 ? "one minute" : `${numberOfMinutes}·minutes`}
+      </p>
+    </div>
+
+    <article>
+      <h2 class="text-5xl mb-5! mt-0! font-bold font-pixel">{title}</h2>
+      <slot />
+    </article>
+
+    <hr class="opacity-20 border-none h-px w-full bg-[#222]" />
+
+    <div class="opacity-60 mb-2 text-xs mt-8">
+      <p class="my-2 font-pixel">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-file-text inline-block h-3 w-3 align-[-.125rem] mr-2"
+        >
+          <title>Word count</title>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+          ></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        {wordCount} words
+      </p>
+      <p class="my-2 font-pixel">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-calendar inline-block h-3 w-3 align-[-.125rem] mr-2"
+        >
+          <title>Published date</title>
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        {formattedDate}
+      </p>
+    </div>
+  </main>
+</Layout>

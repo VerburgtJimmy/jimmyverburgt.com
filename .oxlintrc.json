@@ -36,5 +36,5 @@
     "builtin": true
   },
   "globals": {},
-  "ignorePatterns": ["public/tailwind.css"]
+  "ignorePatterns": []
 }
