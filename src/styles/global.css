@@ -24,6 +24,35 @@
   font-family: "Geist Pixel", "Geist Mono", monospace;
 }
 
+/* --- Global interaction feel --- */
+
+/* Press feedback on all links and buttons */
+a,
+button {
+  transition: transform 0.1s ease;
+}
+
+a:active,
+button:active {
+  transform: scale(0.97);
+}
+
+/* 44px minimum tap target for small interactive elements via pseudo-element */
+nav a,
+.tap-target {
+  position: relative;
+}
+
+nav a::after,
+.tap-target::after {
+  content: "";
+  position: absolute;
+  inset: 50% 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+}
+
 /* --- Article prose styles --- */
 
 article h1,
